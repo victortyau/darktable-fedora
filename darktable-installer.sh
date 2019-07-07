@@ -46,6 +46,12 @@ cd build
 
 cmake -DCMAKE_BUILD_TYPE=Release ..
 
-make -j5
+make -j4
 
 make install
+
+endtime=$(date +%s)
+
+secs=$(($endtime - $starttime))
+
+printf 'Elapsed Time %dh:%dm:%ds\n' $(($secs/3600)) $(($secs%3600/60)) $(($secs%60))
